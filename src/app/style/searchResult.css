@@ -1,0 +1,39 @@
+.search-result {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #f9f9f9;
+  transition: box-shadow 0.3s;
+}
+
+.search-result:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.thumbnail-container {
+  margin-right: 15px;
+}
+
+.thumbnail {
+  width: 100px;
+  height: auto;
+  border-radius: 4px;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.book-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 0;
+}
+
+.book-authors {
+  color: #555;
+  margin: 5px 0 0;
+}
