@@ -16,7 +16,7 @@ export default function BookReader() {
   const handleSearch = async () => {
     try {
       const response = await axios.get(
-        `https://www.googleapis.com/books/v1/volumes?q=${searchQuery}&filter=free-ebooks&key=AIzaSyAKoKeJxRYcPHaBfDSojVDf_zrRQ5L7dh8`
+        `https://www.googleapis.com/books/v1/volumes?q=${searchQuery}&filter=free-ebooks&key=API_KEY`
       );
       setBookData(response.data.items || []);
     } catch (error) {
