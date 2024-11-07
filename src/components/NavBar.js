@@ -49,6 +49,11 @@ function Navbar() {
                 About
               </Link>
             </li>
+            <li>
+              <Link href="/admin" className="text-gray-600 hover:text-gray-900 cursor-pointer">
+                Admin
+              </Link>
+            </li>
           </ul>
           <div className="flex items-center space-x-4">
             {isLoggedIn ? (

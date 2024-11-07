@@ -25,7 +25,7 @@ function Login() {
         localStorage.setItem('token', response.data.accessToken);
         localStorage.setItem('username', response.data.username); // Store username
         setMessage('Login successful!');
-        router.push('/'); // Redirect to home page
+        router.push('/'); 
       } else {
         setMessage('Login failed: Invalid response from server');
       }

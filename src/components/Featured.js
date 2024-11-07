@@ -1,3 +1,5 @@
+"use client"
+
 import React from 'react';
 
 function ResourceCard({ id, title, description }) {
@@ -23,33 +25,33 @@ function Featured() {
   const resources = [
     {
       id: "digital-collections",
-      title: "Digital Collections",
-      description: "Explore our digital collections, including e-books, articles, and more.",
-      details: "Our digital collections feature over 100,000 e-books, 50,000 academic journal articles, and a vast array of multimedia resources. Access these materials 24/7 from anywhere with your library card. Popular collections include our Historical Newspaper Archive, Scientific Journal Database, and Classic Literature E-book Series."
+      title: "Bộ sưu tập kỹ thuật số",
+      description: "Khám phá các bộ sưu tập kỹ thuật số của chúng tôi, bao gồm sách điện tử, bài báo và nhiều hơn nữa.",
+      details: "Bộ sưu tập kỹ thuật số của chúng tôi có hơn 100.000 sách điện tử, 50.000 bài báo học thuật và nhiều tài nguyên đa phương tiện. Truy cập các tài liệu này 24/7 từ bất kỳ đâu với thẻ thư viện của bạn. Các bộ sưu tập phổ biến bao gồm Lưu trữ Báo Cổ, Cơ sở dữ liệu Tạp chí Khoa học và Bộ sách điện tử Văn học Cổ điển."
     },
     {
       id: "research-guides",
-      title: "Research Guides",
-      description: "Get help with your research, from finding sources to citing your work.",
-      details: "Our research guides cover a wide range of topics and disciplines. Each guide is curated by expert librarians and includes recommended databases, key resources, and tips for effective research strategies. We offer guides for popular subjects like History, Biology, Computer Science, and Literature, as well as specialized topics like Data Visualization and Systematic Reviews."
+      title: "Hướng dẫn nghiên cứu",
+      description: "Nhận trợ giúp cho nghiên cứu của bạn, từ việc tìm kiếm nguồn đến trích dẫn công việc của bạn.",
+      details: "Hướng dẫn nghiên cứu của chúng tôi bao gồm nhiều chủ đề và lĩnh vực. Mỗi hướng dẫn do các thủ thư chuyên gia biên soạn và bao gồm các cơ sở dữ liệu được khuyến nghị, các tài nguyên chính và mẹo cho chiến lược nghiên cứu hiệu quả. Chúng tôi cung cấp hướng dẫn cho các môn phổ biến như Lịch sử, Sinh học, Khoa học Máy tính và Văn học, cũng như các chủ đề chuyên ngành như Trực quan hóa Dữ liệu và Đánh giá Hệ thống."
     },
     {
       id: "study-spaces",
-      title: "Study Spaces",
-      description: "Find a quiet spot to study, collaborate with classmates, or work on a project.",
-      details: "Our library offers a variety of study spaces to suit different needs. We have silent reading rooms, group study areas, and tech-enabled collaboration spaces. Features include adjustable lighting, ergonomic furniture, and power outlets at every seat. Book a private study room online or use our open spaces on a first-come, first-served basis."
+      title: "Khu vực học tập",
+      description: "Tìm một chỗ yên tĩnh để học, làm việc nhóm hoặc làm việc trên một dự án.",
+      details: "Thư viện của chúng tôi cung cấp nhiều khu vực học tập phù hợp với các nhu cầu khác nhau. Chúng tôi có các phòng đọc im lặng, khu vực học nhóm và không gian hợp tác có công nghệ hỗ trợ. Các tiện nghi bao gồm ánh sáng có thể điều chỉnh, nội thất tiện nghi và ổ cắm điện tại mỗi chỗ ngồi. Đặt phòng học riêng trực tuyến hoặc sử dụng các khu vực mở theo nguyên tắc ai đến trước, phục vụ trước."
     },
     {
       id: "library-hours",
-      title: "Library Hours",
-      description: "Open Monday-Friday: 8am-10pm, Saturday-Sunday: 10am-8pm",
-      details: "Main Library Hours:\nMonday-Friday: 8am-10pm\nSaturday-Sunday: 10am-8pm\n\nSpecial Collections:\nMonday-Friday: 9am-5pm\nSaturday: 10am-4pm\nSunday: Closed\n\nNote: Hours may vary during holidays and exam periods. Check our website or call for the most up-to-date information."
+      title: "Giờ hoạt động của thư viện",
+      description: "Mở cửa từ Thứ Hai - Thứ Sáu: 8h - 22h, Thứ Bảy - Chủ Nhật: 10h - 20h",
+      details: "Giờ Thư viện Chính:\nThứ Hai - Thứ Sáu: 8h - 22h\nThứ Bảy - Chủ Nhật: 10h - 20h\n\nBộ sưu tập Đặc biệt:\nThứ Hai - Thứ Sáu: 9h - 17h\nThứ Bảy: 10h - 16h\nChủ Nhật: Đóng cửa\n\nLưu ý: Giờ có thể thay đổi trong các ngày lễ và kỳ thi. Kiểm tra trang web của chúng tôi hoặc gọi điện để có thông tin cập nhật nhất."
     },
     {
       id: "meet-staff",
-      title: "Meet Our Staff",
-      description: "Our librarians are here to help! Visit the information desk or schedule a consultation.",
-      details: "Our dedicated staff includes subject specialists, research librarians, and technology experts. Meet some of our team members:\n\n- Sarah Johnson, Head Librarian (specializes in Literature and History)\n- Dr. Michael Chen, Research Support Librarian (STEM focus)\n- Emily Rodriguez, Digital Resources Coordinator\n- Alex Kim, Information Technology Specialist\n\nSchedule a one-on-one consultation or visit the information desk for immediate assistance."
+      title: "Gặp gỡ Nhân viên",
+      description: "Các thủ thư của chúng tôi luôn sẵn sàng hỗ trợ! Ghé qua bàn thông tin hoặc đặt lịch hẹn tư vấn.",
+      details: "Đội ngũ nhân viên của chúng tôi bao gồm các chuyên gia về môn học, thủ thư nghiên cứu và các chuyên gia công nghệ. Gặp gỡ một số thành viên trong nhóm của chúng tôi:\n\n- Lê Tất Đạt, Thủ thư Trưởng (chuyên về Văn học và Lịch sử)\n- Lê Hoàng Long, Thủ thư Hỗ trợ Nghiên cứu (tập trung vào STEM)\n- Nguyễn Như Huy Hoàng, Điều phối viên Tài nguyên Kỹ thuật số\n- Nguyễn Nhật Anh, Chuyên gia Công nghệ Thông tin\n- Vũ Quang Dũng."
     }
   ];
 
@@ -57,7 +59,7 @@ function Featured() {
     <>
       <section className="py-12">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold mb-8">Featured Resources</h2>
+          <h2 className="text-3xl font-bold mb-8">Nguồn tài nguyên nổi bật</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
             {resources.map(resource => (
               <ResourceCard

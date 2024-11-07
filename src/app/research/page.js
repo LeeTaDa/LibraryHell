@@ -1,51 +1,62 @@
-"use client";
+'use client'
 
-import { useState } from "react";
-import axios from "axios";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ExternalLink } from "lucide-react";
-import Navbar from "@/components/NavBar";
+import { useState, useEffect } from "react"
+import { useSearchParams } from "next/navigation"
+import axios from "axios"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { ExternalLink } from "lucide-react"
 
 export default function BookReader() {
-  const [searchQuery, setSearchQuery] = useState("");
-  const [bookData, setBookData] = useState([]);
-  const [selectedBook, setSelectedBook] = useState(null);
+  const [searchQuery, setSearchQuery] = useState("")
+  const [bookData, setBookData] = useState([])
+  const [category, setCategory] = useState("")
+  const searchParams = useSearchParams()
 
-  const handleSearch = async () => {
+  useEffect(() => {
+    const categoryParam = searchParams.get('category')
+    if (categoryParam) {
+      setCategory(categoryParam)
+      setSearchQuery(categoryParam)
+      handleSearch(categoryParam)
+    }
+  }, [searchParams])
+
+  const handleSearch = async (query = searchQuery) => {
     try {
       const response = await axios.get(
-        `https://www.googleapis.com/books/v1/volumes?q=${searchQuery}&filter=free-ebooks&key=AIzaSyAKoKeJxRYcPHaBfDSojVDf_zrRQ5L7dh8`
-      );
-      setBookData(response.data.items || []);
+        `https://www.googleapis.com/books/v1/volumes?q=${query}&filter=free-ebooks&key=AIzaSyAKoKeJxRYcPHaBfDSojVDf_zrRQ5L7dh8&maxResults=30`
+      )
+      setBookData(response.data.items || [])
     } catch (error) {
-      console.error("Error fetching books:", error.message);
+      console.error("Error fetching books:", error.message)
     }
-  };
+  }
 
   const handleReadBook = (book) => {
-    // Open the preview link in a new tab if available
-    const previewLink = book.volumeInfo.previewLink;
+    const previewLink = book.volumeInfo.previewLink
     if (previewLink) {
-      window.open(previewLink, "_blank");
+      window.open(previewLink, "_blank")
     }
-  };
+  }
 
   return (
     <>
-      <Navbar />
       <div className="container mx-auto p-4">
-        <h1 className="text-3xl font-bold mb-6">Book Reader</h1>
+        <h1 className="text-3xl font-bold mb-6">
+          {category ? `Books in ${category}` : "Book Research"}
+        </h1>
         <div className="flex gap-2 mb-6">
           <Input
             type="text"
             placeholder="Search for free books..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
+            onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
             className="flex-grow"
           />
-          <Button onClick={handleSearch}>Search</Button>
+          <Button onClick={() => handleSearch()}>Search</Button>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {bookData.map((book) => (
@@ -91,5 +102,5 @@ export default function BookReader() {
         </div>
       </div>
     </>
-  );
+  )
 }
