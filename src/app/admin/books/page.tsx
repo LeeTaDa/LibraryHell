@@ -1,30 +1,53 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 // Mock data for books
 const initialBooks = [
-  { id: 1, title: "To Kill a Mockingbird", author: "Harper Lee", isbn: "9780446310789" },
+  {
+    id: 1,
+    title: "To Kill a Mockingbird",
+    author: "Harper Lee",
+    isbn: "9780446310789",
+  },
   { id: 2, title: "1984", author: "George Orwell", isbn: "9780451524935" },
-  { id: 3, title: "The Great Gatsby", author: "F. Scott Fitzgerald", isbn: "9780743273565" },
-]
+  {
+    id: 3,
+    title: "The Great Gatsby",
+    author: "F. Scott Fitzgerald",
+    isbn: "9780743273565",
+  },
+];
 
 export default function BooksManagement() {
-  const [books, setBooks] = useState(initialBooks)
-  const [newBook, setNewBook] = useState({ title: '', author: '', isbn: '' })
+  const [books, setBooks] = useState(initialBooks);
+  const [newBook, setNewBook] = useState({ title: "", author: "", isbn: "" });
 
   const addBook = () => {
-    setBooks([...books, { id: books.length + 1, ...newBook }])
-    setNewBook({ title: '', author: '', isbn: '' })
-  }
+    setBooks([...books, { id: books.length + 1, ...newBook }]);
+    setNewBook({ title: "", author: "", isbn: "" });
+  };
 
   const deleteBook = (id: number) => {
-    setBooks(books.filter(book => book.id !== id))
-  }
+    setBooks(books.filter((book) => book.id !== id));
+  };
 
   return (
     <div className="space-y-4">
@@ -41,12 +64,16 @@ export default function BooksManagement() {
             <Input
               placeholder="Title"
               value={newBook.title}
-              onChange={(e) => setNewBook({ ...newBook, title: e.target.value })}
+              onChange={(e) =>
+                setNewBook({ ...newBook, title: e.target.value })
+              }
             />
             <Input
               placeholder="Author"
               value={newBook.author}
-              onChange={(e) => setNewBook({ ...newBook, author: e.target.value })}
+              onChange={(e) =>
+                setNewBook({ ...newBook, author: e.target.value })
+              }
             />
             <Input
               placeholder="ISBN"
@@ -73,12 +100,17 @@ export default function BooksManagement() {
               <TableCell>{book.author}</TableCell>
               <TableCell>{book.isbn}</TableCell>
               <TableCell>
-                <Button variant="destructive" onClick={() => deleteBook(book.id)}>Delete</Button>
+                <Button
+                  variant="destructive"
+                  onClick={() => deleteBook(book.id)}
+                >
+                  Delete
+                </Button>
               </TableCell>
             </TableRow>
           ))}
         </TableBody>
       </Table>
     </div>
-  )
+  );
 }
