@@ -1,19 +1,21 @@
-'use client'
+"use client";
 
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import { BarChart, Book, Users, FileText, Settings } from 'lucide-react'
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { BarChart, Book, Users, FileText, Settings } from "lucide-react";
 
 const navItems = [
-  { name: 'Dashboard', href: '/admin', icon: BarChart },
-  { name: 'Books', href: '/admin/books', icon: Book },
-  { name: 'Users', href: '/admin/users', icon: Users },
-  { name: 'Content', href: '/admin/content', icon: FileText },
-  { name: 'Settings', href: '/admin/settings', icon: Settings },
-]
+  { name: "Dashboard", href: "/admin", icon: BarChart },
+  { name: "Books", href: "/admin/books", icon: Book },
+  { name: "Users", href: "/admin/users", icon: Users },
+  { name: "TacGia", href: "/admin/tacgias", icon: Users },
+  { name: "NXB", href: "/admin/nxb", icon: Users },
+  { name: "Content", href: "/admin/content", icon: FileText },
+  { name: "Settings", href: "/admin/settings", icon: Settings },
+];
 
 export function Sidebar() {
-  const pathname = usePathname()
+  const pathname = usePathname();
 
   return (
     <nav className="w-64 bg-white shadow-md">
@@ -26,7 +28,7 @@ export function Sidebar() {
             <Link
               href={item.href}
               className={`flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 ${
-                pathname === item.href ? 'bg-gray-200' : ''
+                pathname === item.href ? "bg-gray-200" : ""
               }`}
             >
               <item.icon className="mr-3 h-5 w-5" />
@@ -36,5 +38,5 @@ export function Sidebar() {
         ))}
       </ul>
     </nav>
-  )
+  );
 }
