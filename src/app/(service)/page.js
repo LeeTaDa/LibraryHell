@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "./layout";
+import Layout from "../layout";
 import Hero from "@/components/Hero";
 import Featured from "@/components/Featured";
 import Footer from "@/components/Footer";
