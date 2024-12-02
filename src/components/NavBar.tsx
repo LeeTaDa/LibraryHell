@@ -72,23 +72,23 @@ function Navbar() {
     <div className="bg-white py-4 shadow-md">
       <div className="container mx-auto flex justify-between items-center">
         <Link href="/" className="text-lg font-bold cursor-pointer">
-          Library Website
+          Thư viện ĐH GTVT
         </Link>
         <div className="flex items-center">
           <ul className="flex items-center space-x-4 mr-6">
             <li>
               <Link href="/collections" className="text-gray-600 hover:text-gray-900">
-                Collections
+                Bộ sưu tập
               </Link>
             </li>
             <li>
               <Link href="/research" className="text-gray-600 hover:text-gray-900">
-                Research
+                Tra cứu
               </Link>
             </li>
             <li>
               <Link href="/about" className="text-gray-600 hover:text-gray-900">
-                About
+                Giới thiệu
               </Link>
             </li>
             <li>

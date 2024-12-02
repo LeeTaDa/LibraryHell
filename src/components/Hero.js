@@ -6,14 +6,11 @@ function Hero() {
     <section className="text-white py-12 bg-cover bg-center" style={{ backgroundImage: 'url(/imgs/library.jpg)', backgroundSize: 'cover' }}>
       <div className="container mx-auto text-center">
         <h1 className="text-4xl font-bold mb-4">
-          Welcome to the Library Website
+          Chào mừng đến với thư viện Đại học Giao Thông Vận Tải
         </h1>
         <p className="text-lg mb-8">
-          Explore our collections, research resources, and more.
+          Khám phá bộ sưu tập và kho sách của chúng tôi.
         </p>
-        <button className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded">
-          Get Started
-        </button>
       </div>
     </section>
   );
