@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { PhieuTra, PhieuMuon } from '../../type';
+import { PhieuTra, PhieuMuon } from '../../../types/type';
 
 const PHIEU_TRA_API_URL = 'http://localhost:8888/phieutras';
 const PHIEU_MUON_API_URL = 'http://localhost:8888/phieumons';

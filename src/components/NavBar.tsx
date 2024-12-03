@@ -91,11 +91,11 @@ function Navbar() {
                 Giới thiệu
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link href="/admin" className="text-gray-600 hover:text-gray-900">
                 Admin
               </Link>
-            </li>
+            </li> */}
           </ul>
           <div className="flex items-center space-x-4">
             {isLoggedIn && userData ? (

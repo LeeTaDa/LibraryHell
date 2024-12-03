@@ -60,7 +60,7 @@ function Toast({ title, description, variant = "default", className, onDismiss, 
     <div
       className={cn(
         "max-w-sm w-full bg-white shadow-lg rounded-lg pointer-events-auto overflow-hidden",
-        variant === "destructive" && "bg-red-600 text-white",
+        variant === "destructive" && "bg-red-600 text-red",
         className
       )}
       {...props}

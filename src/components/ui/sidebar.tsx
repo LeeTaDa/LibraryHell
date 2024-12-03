@@ -10,10 +10,7 @@ const navItems = [
   { name: "Users", href: "/admin/users", icon: Users },
   { name: "Phieu_muon", href: "/admin/phieu_muon", icon: Table},
   { name: "Phieu_tra", href: "/admin/phieu_tra", icon: Table2},
-  { name: "TacGia", href: "/admin/tacgias", icon: Users },
-  { name: "NXB", href: "/admin/nxb", icon: Users },
   { name: "Content", href: "/admin/content", icon: FileText },
-  { name: "Settings", href: "/admin/settings", icon: Settings },
 ];
 
 export function Sidebar() {
